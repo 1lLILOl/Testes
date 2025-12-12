@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    /*
+    --color1: #302C5E; //vermelho;
+    --color1a: #3A4A6B;
+    --color2: #466673;   //azul;
+    --color2a: #5C7873;
+    --color3: #85917A;   //roxo;
+    --color3a: #B3A286;
+    --color4: #C7C093; //beje;
+    */
+
+    --color1: #AEC3B0;
+    --color1a: #5159a8;
+    --color2: #b7d083;
+    --color2a: #d7e0a3;
+    --color3: #435D73;
+    --color3a: #C7C093;
+    --color4: #cccccc60;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*BASES DO ARQUIVO */
+body{
+    background: url("../img/pokeBG.jpg");
+}
+.sobrefundo{
+    width: 90dvw;
+    margin: 80px auto;
+    padding: 10px;
+    background: var(--color4);
+    backdrop-filter: blur(6px) saturate(200%);
+    border-radius: 30px;
+    border: solid 3px #111111a2;
+}
+.titulo{
+    color: var(--color1a);
+    text-shadow: 2px 2px #000, 2px -2px #000, -2px 2px #000, -2px -2px #000;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: clamp(25px, calc(10dvw + 10px), 80px);
+}
+.subtitulo{
+    color: var(--color1);
+    text-shadow: 2px 2px #000, 2px -2px #000, -2px 2px #000, -2px -2px #000;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: clamp(15px, calc(6dvw + 10px), 40px);
+}
+.quizes{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background: var(--color3a);
+    backdrop-filter: blur(12px) saturate(200%);
+    border-radius: 20px;
+    border: solid 2px #111111a2;
+    max-width: max-content;
+    margin: 15px auto;
+}
+.quizes a{
+    text-decoration: none;
+}
+.quizes img{
+    width: 90%;
+    max-height: 320px;
+    margin: 5%;
+}
+nav{
+    position: fixed;
+    z-index: 50;
+    border-radius: 10px;
+    border: #000 solid 2px;
+    top: 15px;
+    width: auto;
+    right: 2%;
+    left: 2%;
+    padding: 8px;
+    background: var(--color4);
+    backdrop-filter: blur(12px) saturate(200%);
+}
+nav a{
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--color1a);
+    background: var(--color3a);
+    margin: 8px;
+    border-radius: 10px;
+    border: #000 solid 2px;
+    padding: 3px;
+}
+nav a:hover{
+    background: var(--color3);
+}
+/* QUIZ POKEMON, pode ser usado de base no futuro para outros*/
+.poke{
+    display: flex;
+    flex-wrap: wrap;
+    width: 94%;
+    margin: 3%;
+    justify-content: center;
+     color: var(--color1);
+}
+.poke h1{
+    width: 90%;
+    font-size: clamp(35px, 15dvw, 80px);
+    margin-bottom: 35px;
+}
+.poke img{
+    width: clamp(100px, calc(80px + 80%), 400px);
+    border-radius: 15px;
+}
+.poke h2{
+    margin: 25px auto;
+    font-size: clamp(20px, 8dvw, 50px);
+    text-align: center;
+    text-shadow: 1px 1px black, 1px -1px black, -1px 1px black, -1px -1px black;
+}
+.question{
+    text-align: center;
+    font-size: 10dvw;
+    width: 96%;
+    height: clamp(150px, max-content, 600px);
+    margin: clamp(10px, 10%, 25px) auto;
+    border: black solid 2px;
+    background-color: var(--color3);
+    border-radius: 15px;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    text-shadow: 1px 1px black, 1px -1px black, -1px 1px black, -1px -1px black;
+}
+.question h2{
+    max-width: 75%;
+    font-size: clamp(15px, 8dvw, 40px);
+}
+.question button{
+    width: 98%;
+    margin: 0.3dvh;
+    border: solid 2px var(--color4);
+    padding: 15px 0px;
+    background-color: var(--color3a);
+    cursor: pointer;
+    font-size: clamp(8px, 3dvw, 20px);
+}
+.question button:hover{
+    background: var(--color2a);
+}
+.question button.numQuestion{
+    background-color: var(--color1a);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    line-height: 1dvw;
+    width: clamp(10px, 6dvw, 35px);
+    height: clamp(10px, 6dvw, 35px);
+    border-radius: 50%;
+}
+div.questionVisivel{
+    display: flex;
+}
+
+#q1 a{
+    color: var(--color2);
+    text-shadow: 1px 1px white, 1px -1px white, -1px 1px white, -1px -1px white;
+    position: absolute;
+    font-size: 5dvw;
+    height: 1dvh;
+    top: 0px;
+    right: -100px;
+    animation: regieleki 0.8s linear infinite ;
+    cursor: pointer;
+    opacity: 10%;
+    text-align: center;
+}
+@keyframes regieleki {
+    from{
+        transform: translate(0);
+    }
+    to{
+        transform: translateX(-100dvw);
+    }
+}
+
+#q8{
+img{
+    cursor: pointer;
+}
+button img{
+    position: absolute;
+    inset: 0;
+    display: none;
+    width: 90%;
+    height: 90%;
+}
+button:hover > img{
+    display: block;
+}
+button:hover > span{
+    display: none;
+}
+}
+
+.question button img{
+    width: 40px;
+}
+
+#minigameQ10{
+    position: relative;
+    display: block;
+    margin-bottom: 5dvw;
+    width: 90%;
+    height: clamp(300px, 50dvh, 700px);
+  
+
+    #personagem{
+        width: 6dvw;
+        display: block;
+        position: absolute;
+    }
+.ataques{
+    position: absolute;
+    }
+}

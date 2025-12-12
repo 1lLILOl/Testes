@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Monstro De Bolso</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Voltar ao Quizes</a>
+    </nav>
+    <div class="sobrefundo">
+
+        <div class="poke">
+
+              <h1 class="titulo">PokeQuiz</h1>
+        <img src="img/lgl.webp" alt="capa" class="capa">
+        
+        <div class="question " id="q1">
+        <h2>Qual o pokemon mais rápido do jogo?</h2>
+
+        <a onclick="option(1, 9)"><img src="img/regieleki.webp"></a>
+
+        <button class="numQuestion">1</button>
+
+        <button class="option1" onclick="option(1)">Ninjask</button>
+        <button class="option1" onclick="option(1)">Shiny Mega Rayquaza level 100 com 6 ivs perfeitos</button>
+        <button class="option1" onclick="option(1)">Deoxys Speed Form</button>
+        <button class="option1" onclick="option(1)">Mega beedril</button>
+        </div>
+
+        <div class="question" id="q2">
+        <h2>Qual pokemon sem fraquezas?</h2>
+
+        <button class="numQuestion">2</button>
+
+        <button class="option1" onclick="option(2)">Swampert</button>
+        <button class="option1" onclick="option(2)">Mawile</button>
+        <button class="option1" onclick="option(2)">Spiritomb</button>
+        <button class="option1" onclick="option(2, 9)">Elecktross</button>
+        </div>
+        
+        <div class="question" id="q3">
+        <h2>Em qual geração foi introduzido o tipo fada?</h2>
+
+        <button class="numQuestion">3</button>
+
+        <button class="option1" onclick="option(3)">Gen ((5 + 2/2)/6) </button>
+        <button class="option1" onclick="option(3)">Gen (√64)</button>
+        <button class="option1" onclick="option(3, 9)">Gen (8²-58)</button>
+        <button class="option1" onclick="option(3)">Gen 3</button>
+        </div>
+
+        <div class="question" id="q4">
+        <h2>Qual o melhor pokemon já feito? (VGC)</h2>
+        
+        <button class="numQuestion">4</button>
+
+        <button class="option1" onclick="option(4)">Urshifu</button>
+        <button class="option1" onclick="option(4)">Landrous-T</button>
+        <button class="option1" onclick="option(4, 9)">Xerneas</button>
+        <button class="option1" onclick="option(4)">Smeargle</button>
+        </div>
+
+        <div class="question" id="q5">
+        <h2>Qual o melhor inicial de todos os tempos?</h2>
+
+        <button class="numQuestion">5</button>
+
+        <button class="option1" onclick="option(5)">Charizard</button>
+        <button class="option1" onclick="option(5, 9)">Venussaur</button>
+        <button class="option1" onclick="option(5)">Rilaboom</button>
+        <button class="option1" onclick="option(5)">Incineroar</button>
+        </div>
+
+        <div class="question" id="q6">
+        <h2>Qual o primeiro pokemon de <a onclick="option(6, 9)" style="cursor: pointer;">todos</a>?</h2>
+
+        <button class="numQuestion">6</button>
+
+        <button class="option1" onclick="option(6)">Arceus</button>
+        <button class="option1" onclick="option(6)">Mew</button>
+        <button class="option1" onclick="option(6)">Bulbassaur</button>
+        <button class="option1" onclick="option(6)">Ryhorn</button>
+        </div>
+
+        <div class="question" id="q7">
+        <h2>Mega evolua o Gengar</h2>
+
+        <button class="numQuestion">7</button>
+
+        <button class="option1" onclick="option(7, 9)"><img src="img/gengarite.png"></button>
+        <button class="option1" onclick="option(7)"><img src="img/charizarditeY.png"></button>
+        <button class="option1" onclick="option(7)"><img src="img/salamencite.png"></button>
+        <button class="option1" onclick="option(7)"><img src="img/loppunite.png"></button>
+        </div>
+
+        <div class="question" id="q8">
+        <h2>Ache o impostor</h2>
+
+        <button class="numQuestion " onclick="option(8, 9)">
+            <span>8</span> <img src="img/zoroark.png"></button>
+
+        <img class="allGen5" src="img/allGen5.png" alt="allGen5">
+        </div>
+
+        <div class="question  questionVisivel" id="q9">
+        <h2>Qual o inicial tipo fogo de  Hoen?</h2>
+
+        <button class="numQuestion" >9</button>
+
+        <button class="option1" onclick="option(9)">Tepig</button>
+        <button class="option1" onclick="option(9)">Litten</button>
+        <button class="option1" onclick="option(9)">Chimchar</button>
+        <button class="option1" onclick="option(9, 9)">Torchic</button>
+
+        </div>
+
+        <div class="question" id="q10">
+        <h2>SOBREVIVA!!!</h2>
+
+        <button class="numQuestion" >10</button>
+
+        <div id="minigameQ10">
+
+            <img src="img/shedinja.png" id="personagem">
+
+            <img src="img/surf.png" class="ataques" id="surf">
+            <img src="img/darkrai.png"  class="ataques" id="darkrai">
+            <img src="img/charizard.gif"  class="ataques" id="charizard">
+            <img src="img/haunter.gif"  class="ataques" id="haunter">
+            <img src="img/jolteon.png"  class="ataques" id="jolteon">
+            <img src="img/aerodactyl.gif"  class="ataques" id="aerodactyl">
+
+        </div>
+
+        </div>
+    </div>
+
+    <script src="scripts/index.js"></script>
+</body>
+</html>
