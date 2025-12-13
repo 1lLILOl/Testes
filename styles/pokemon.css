@@ -1,0 +1,619 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    /*
+    --color1: #302C5E; //vermelho;
+    --color1a: #3A4A6B;
+    --color2: #466673;   //azul;
+    --color2a: #5C7873;
+    --color3: #85917A;   //roxo;
+    --color3a: #B3A286;
+    --color4: #C7C093; //beje;
+    */
+
+    --color1: #AEC3B0;
+    --color1a: #5159a8;
+    --color2: #b7d083;
+    --color2a: #d7e0a3;
+    --color3: #435D73;
+    --color3a: #C7C093;
+    --color4: #cccccc60;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*BASES DO ARQUIVO */
+body{
+    background: url("../img/pokeBG.jpg");
+}
+.sobrefundo{
+    width: 90dvw;
+    margin: 80px auto;
+    padding: 10px;
+    background: var(--color4);
+    backdrop-filter: blur(6px) saturate(200%);
+    border-radius: 30px;
+    border: solid 3px #111111a2;
+}
+.titulo{
+    color: var(--color1a);
+    text-shadow: 2px 2px #000, 2px -2px #000, -2px 2px #000, -2px -2px #000;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: clamp(25px, calc(10dvw + 10px), 80px);
+}
+.subtitulo{
+    color: var(--color1);
+    text-shadow: 2px 2px #000, 2px -2px #000, -2px 2px #000, -2px -2px #000;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: clamp(15px, calc(6dvw + 10px), 40px);
+}
+nav{
+    position: fixed;
+    z-index: 50;
+    border-radius: 10px;
+    border: #000 solid 2px;
+    top: 15px;
+    width: auto;
+    right: 2%;
+    left: 2%;
+    padding: 8px;
+    background: var(--color4);
+    backdrop-filter: blur(12px) saturate(200%);
+}
+nav a{
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--color1a);
+    background: var(--color3a);
+    margin: 8px;
+    border-radius: 10px;
+    border: #000 solid 2px;
+    padding: 3px;
+}
+nav a:hover{
+    background: var(--color3);
+}
+/* QUIZ POKEMON, pode ser usado de base no futuro para outros*/
+.poke{
+    display: flex;
+    flex-wrap: wrap;
+    width: 94%;
+    margin: 3%;
+    justify-content: center;
+     color: var(--color1);
+}
+.poke h1{
+    width: 90%;
+    font-size: clamp(35px, 15dvw, 80px);
+    margin-bottom: 35px;
+}
+.poke img{
+    width: clamp(50px, calc(30px + 60%), 300px);
+    border-radius: 15px;
+}
+.poke h2{
+    margin: 25px auto;
+    font-size: clamp(20px, 8dvw, 50px);
+    text-align: center;
+    text-shadow: 1px 1px black, 1px -1px black, -1px 1px black, -1px -1px black;
+}
+.question{
+    text-align: center;
+    font-size: 10dvw;
+    width: 96%;
+    height: clamp(150px, max-content, 600px);
+    margin: clamp(10px, 10%, 25px) auto;
+    border: black solid 2px;
+    background-color: var(--color3);
+    border-radius: 15px;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    text-shadow: 1px 1px black, 1px -1px black, -1px 1px black, -1px -1px black;
+}
+.question h2{
+    width: 80%;
+    font-size: clamp(15px, 8dvw, 40px);
+}
+.question button{
+    width: 98%;
+    margin: 0.3dvh;
+    border: solid 2px var(--color4);
+    padding: 15px 0px;
+    background-color: var(--color3a);
+    cursor: pointer;
+    font-size: clamp(8px, 3dvw, 20px);
+}
+.question button:hover{
+    background: var(--color2a);
+}
+.question button.numQuestion{
+    background-color: var(--color1a);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    line-height: 35%;
+    width: clamp(10px, 6dvw, 35px);
+    height: clamp(10px, 6dvw, 35px);
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+div.questionVisivel{
+    display: flex;
+}
+
+#q1 a{
+    color: var(--color2);
+    text-shadow: 1px 1px white, 1px -1px white, -1px 1px white, -1px -1px white;
+    position: absolute;
+    font-size: 5dvw;
+    height: 1dvh;
+    top: 0px;
+    right: -100px;
+    animation: regieleki 0.8s linear infinite ;
+    cursor: pointer;
+    opacity: 10%;
+    text-align: center;
+}
+@keyframes regieleki {
+    from{
+        transform: translate(0);
+    }
+    to{
+        transform: translateX(-100dvw);
+    }
+}
+
+#q8{
+img{
+    cursor: pointer;
+}
+button img{
+    position: absolute;
+    inset: 0;
+    display: none;
+    width: 90%;
+    height: 90%;
+}
+button:hover > img{
+    display: block;
+}
+button:hover > span{
+    display: none;
+}
+}
+
+.question button img{
+    width: 40px;
+}
+#q10{
+    .movMobile{
+        width: 25dvw;
+        height: 25dvw;
+        position: fixed;
+        left: 10px;
+        bottom: 5dvh;
+        border-radius: 50%;
+        background: var(--color4);
+    }
+    #esquerda{
+        aspect-ratio: 1/1;
+        width: 40%;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    #cima{
+        aspect-ratio: 1/1;
+        width: 40%;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%);
+    }
+    #direita{
+        aspect-ratio: 1/1;
+        width: 40%;
+        border-radius: 50%;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    #baixo{
+        aspect-ratio: 1/1;
+        width: 40%;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+    }
+}
+@media  screen and (min-width: 1000px) {
+    .movMobile{
+        display: none;
+    }
+}
+#minigameQ10{
+    position: relative;
+    display: block;
+    margin-bottom: 5dvw;
+    width: 90%;
+    height: clamp(250px, 40dvh, 600px);
+  
+
+    #personagem{
+        width: 6dvw;
+        display: block;
+        position: absolute;
+    }
+.ataques{
+    position: absolute;
+    }
+#surf{
+    animation: surf 10s linear infinite;
+    left: 50%;
+    transform:rotateZ(150deg);
+    transform: translate(-50%);
+    width: 300dvw;
+    opacity: 80%;
+    height: 100px;
+}
+#aerodactyl{
+    animation: aerodactyl 10s linear;
+    width: 25dvw;
+}
+#darkrai{
+    animation: darkrai 6s linear;
+    width: 15dvw;
+    top: -500dvh;
+}
+#charizard{
+    animation: charizard 10s;
+    width: 20dvw;
+}
+#haunter{
+    animation: haunter 8s linear infinite;
+    width: 15dvw;
+    top: -500dvh;
+}
+#jolteon{
+    animation: jolteon 5s ease-in-out;
+    width: 20dvw;
+    top: -500dvh;
+}
+}
+@keyframes surf{
+    from{
+        top: -30%;
+    }
+    to{
+        top: 120%;
+    }
+}
+@keyframes aerodactyl{
+    from{
+        bottom: 80%;
+        left: 220dvw;
+    }
+    to{
+        bottom: -20%;
+        left: -20dvw;
+    }
+}
+@keyframes darkrai{
+    from{
+        left: 20dvw;
+        top: 150dvh;
+    }
+    to{
+        left: 0;
+        top: -10dvh;
+    }
+}
+@keyframes charizard{
+    0%{
+        opacity: 100%;
+        display: block;
+        right: -5dvw;
+        bottom: -5dvh;
+    }
+    20%{
+        bottom: 40dvh;
+    }
+    35%{
+        bottom: 30dvh;
+    }
+    50%{
+        right: 120dvw;
+        bottom: 50dvh;
+    }
+    100%{
+        right: 130dvw;
+    }
+}
+@keyframes haunter{
+    from{
+        right: 15dvw;
+        top: -20dvh;
+    }
+    to{
+        right: -5dvw;
+        top: 110dvh;
+    }
+}
+@keyframes jolteon{
+    from{
+        left: -30dvw;
+        top: 20dvh;
+    }
+    to{
+        left: 110dvw;
+        top: 30dvh;
+    }
+}
+#q12{
+    .option1{
+        width: 70%;
+        padding: 0;
+        border: var(--color1a) solid 3px;
+    }
+    .btnArc{
+        max-width: 45%;
+    }
+    img{
+    width: clamp(50px, 30dvw, 250px);
+    }
+    input{
+        width: 80%;
+        font-size: clamp(10px, 6dvw, 25px);
+    }
+}
+
+#q13 i{
+    display: block;
+    color: var(--color1a);
+    font-size: 2dvw;
+}
+
+#q15 {
+    #lunala{
+        position: absolute;
+        z-index: 1;
+        max-width: 30%;
+        max-height: 40%;
+        top: 10px;
+        right: 10px;
+    }
+    #lunalaDados{
+        position: absolute;
+        color: var(--color2);
+        padding: 0px 5px;
+        top: 3dvh;
+        left: 10px;
+        font-size: clamp(15px, 4dvw, 30px);
+        border: 2px dashed var(--color3);
+        background: var(--color1);
+    }
+    #lunalaVida{
+        position: absolute;
+        right: 10px;
+        top: -15px;
+        width: clamp(10px, 40%, 300px);
+        z-index: 5;
+    }
+    #rattata{
+        position: absolute;
+        width: clamp(30px, 25%, 150px);
+        bottom: 10px;
+        left: 10px;
+    }
+    #rattataDados{
+        position: absolute;
+        z-index: 5;
+        color: var(--color2);
+        padding: 0px 5px;
+        bottom: 5px;
+        right: 10px;
+        font-size: clamp(15px, 4dvw, 30px);
+        border: 2px dashed var(--color3);
+        background: var(--color1);
+    }
+    #rattataVida{
+        position: absolute;
+        width: clamp(10px, 20%, 200px);
+        top: clamp(10px, 90%, 380px);
+        left: 10px;
+    }
+    #ataquesRattataDiv{
+        position: absolute;
+        bottom: 15%;
+        right: 0;
+        width: clamp(100px, 50px + 60%, 800px);
+        height: 30%;
+        background: var(--color3);
+        border: 2px dashed var(--color1);
+        border-radius: 12px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px 10px 30px;
+
+    }
+}
+@keyframes ataqueDireita{
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(-50dvw, 30dvh);
+    }
+}
+@keyframes ataqueEsquerda{
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(50dvw, -30dvh);
+    }
+}
+#q17{
+    img{
+        position: absolute;
+        opacity: 5%;
+        width: 20%;
+        bottom: 10px;
+        right: 0;
+        cursor: pointer;
+    }
+}
+
+#q19{
+    #onix{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 100px;
+    }
+    #onixDados{
+        position: absolute;
+        color: var(--color2);
+        padding: 0px 5px;
+        top: 3dvh;
+        left: 10px;
+        font-size: clamp(15px, 3dvw, 20px);
+        border: 2px dashed var(--color3);
+        background: var(--color1);
+    }
+    #onixVida{
+        position: absolute;
+        right: 10px;
+        top: -3dvw;
+        width: clamp(30px, 20%, 150px);
+    }
+    #pikachu{
+        position: absolute;
+        width: clamp(30px, 25%, 150px);
+        left: 10px;
+        bottom: 10px;
+        z-index: 3;
+    }
+    #esquerdaDados{
+        position: absolute;
+        z-index: 5;
+        color: var(--color2);
+        padding: 0px 5px;
+        bottom: 5px;
+        right: 10px;
+        font-size: clamp(15px, 3dvw, 20px);
+        border: 2px dashed var(--color3);
+        background: var(--color1);
+        max-width: 60%;
+    }
+    #esquerdaVida{
+        position: absolute;
+        left: 10px;
+        bottom: -3dvw;
+        width: clamp(30px, 25%, 300px);
+        z-index: 5;
+    }
+    #pokemonEsquerda{
+        width: clamp(30px, 30dvw, 300px);
+        z-index: 1;
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+
+    }
+    #ataquesDiv{
+        position: absolute;
+        right: 0;
+        bottom: 15%;
+        border-radius: 10px;
+        width: clamp(100px, 60%, 700px);
+        height: 35%;   
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+        background: var(--color3);
+    }
+}
+
+#q20{
+    #shinyRayquaza{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 150px;
+    }
+    #shinyRayquazaDados{
+        position: absolute;
+        color: var(--color2);
+        padding: 0px 5px;
+        top: 3dvh;
+        left: 10px;
+        font-size: clamp(15px, 3dvw, 20px);
+        border: 2px dashed var(--color3);
+        background: var(--color1);
+    }
+    #shinyRayquazaVida{
+        position: absolute;
+        right: 10px;
+        top: -3dvw;
+        width: clamp(30px, 20%, 150px);
+    }
+    #esquerdaDados{
+        position: absolute;
+        z-index: 5;
+        color: var(--color2);
+        padding: 0px 5px;
+        bottom: 5px;
+        right: 10px;
+        font-size: clamp(15px, 3dvw, 20px);
+        border: 2px dashed var(--color3);
+        background: var(--color1);
+        max-width: 60%;
+    }
+    #esquerdaVida{
+        position: absolute;
+        left: 10px;
+        bottom: -3dvw;
+        width: clamp(30px, 25%, 300px);
+        z-index: 5;
+    }
+    #pokemonEsquerda{
+        width: clamp(30px, 30dvw, 300px);
+        z-index: 1;
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+
+    }
+    #ataquesDiv{
+        position: absolute;
+        right: 0;
+        bottom: 15%;
+        border-radius: 10px;
+        width: clamp(100px, 60%, 700px);
+        height: 35%;   
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+        background: var(--color3);
+    }
+}

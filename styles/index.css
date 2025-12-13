@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    /*
+    --color1: #302C5E; //vermelho;
+    --color1a: #3A4A6B;
+    --color2: #466673;   //azul;
+    --color2a: #5C7873;
+    --color3: #85917A;   //roxo;
+    --color3a: #B3A286;
+    --color4: #C7C093; //beje;
+    */
+
+    --color1: #AEC3B0;
+    --color1a: #5159a8;
+    --color2: #b7d083;
+    --color2a: #d7e0a3;
+    --color3: #435D73;
+    --color3a: #C7C093;
+    --color4: #cccccc60;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*BASES DO ARQUIVO */
+body{
+    background: url("../img/pokeBG.jpg");
+}
+.sobrefundo{
+    width: 90dvw;
+    margin: 80px auto;
+    padding: 10px;
+    background: var(--color4);
+    backdrop-filter: blur(6px) saturate(200%);
+    border-radius: 30px;
+    border: solid 3px #111111a2;
+}
+.titulo{
+    color: var(--color1a);
+    text-shadow: 2px 2px #000, 2px -2px #000, -2px 2px #000, -2px -2px #000;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: clamp(25px, calc(10dvw + 10px), 80px);
+}
+.subtitulo{
+    color: var(--color1);
+    text-shadow: 2px 2px #000, 2px -2px #000, -2px 2px #000, -2px -2px #000;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: clamp(15px, calc(6dvw + 10px), 40px);
+}
+.quizesContainer{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background: var(--color3a);
+    backdrop-filter: blur(12px) saturate(200%);
+    border-radius: 20px;
+    border: solid 2px #111111a2;
+    margin: 15px auto;
+}
+.quizes{
+    border: 1px solid #000;
+    border-radius: 10px;
+    background: var(--color3a);
+    backdrop-filter: blur(12px) saturate(200%);
+    border-radius: 20px;
+    border: solid 2px #111111a2;
+    padding: 10px;
+    margin: 15px auto;
+
+    img{
+        width: 200px;
+        border-radius: 15px;
+    }
+}
+#pokequiz{
+    background: var(--color3);
+}
+a{
+    text-decoration: none;
+}
+nav{
+    position: fixed;
+    z-index: 50;
+    border-radius: 10px;
+    border: #000 solid 2px;
+    top: 15px;
+    width: auto;
+    right: 2%;
+    left: 2%;
+    padding: 8px;
+    background: var(--color4);
+    backdrop-filter: blur(12px) saturate(200%);
+}
+nav a{
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--color1a);
+    background: var(--color3a);
+    margin: 8px;
+    border-radius: 10px;
+    border: #000 solid 2px;
+    padding: 3px;
+}
+nav a:hover{
+    background: var(--color3);
+}
