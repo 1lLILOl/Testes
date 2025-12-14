@@ -617,3 +617,20 @@ button:hover > span{
         background: var(--color3);
     }
 }
+#zerou{
+    display: none;
+
+    #zerouGanhou{
+        display: none;
+    }
+    #zerouPerdeu{
+        display: none;
+    }
+    span{
+        font-size: 5dvw;
+    }
+    h2{
+        font-size: 10dvw;
+        color: var(--color3a);
+    }
+}

@@ -1,6 +1,6 @@
 var acertos = 0;
 var erros = 0;
-
+var pontuacao = 0;
 let audioObliterar = document.getElementById('obliterar');
 //funcao para a q19 e a q20 declarar o primeiro pokemon que vc marcar e dpos batalhar com eles
 var pokemonEscolhido = null;
@@ -28,7 +28,7 @@ function option(numQuestion, option){
         question.style.background = "green";
 
         acertos += 1;
-        console.log('acertos: ', acertos, ' erros: ', erros, ' pontuação: ');
+        console.log('acertos: ', acertos, ' erros: ', erros, ' pontuação: ', pontuacao);
         console.log('Seu pokemon atual é o ', pokemonEscolhido);
 
         if (numQuestion === 7){
@@ -90,36 +90,7 @@ function minigameQ10(){
             keys[i.keyCode] = false;
         });
         //funcao mobile
-
-        window.botaoMobile = function(tecla){
-            switch (tecla){
-                case "direita":
-                    keys[68] = true;
-                    setTimeout(() => {
-                        keys[68] = false;
-                    }, 400);
-                    break;
-                case "esquerda":
-                    keys[65] = true;
-                    setTimeout(() => {
-                        keys[65] = false;
-                    }, 400);
-                    break; 
-                case "cima":
-                    keys[87] = true;
-                    setTimeout(() => {
-                        keys[87] = false;
-                    }, 400);
-                    break; 
-                case "baixo":
-                    keys[83] = true;
-                    setTimeout(() => {
-                        keys[83] = false;
-                    }, 400);
-                    break; 
-            }
-           
-        }
+        botaoMobile(keys);
             
             function atualizar(){
 
@@ -200,6 +171,97 @@ function minigameQ10(){
         } 
     }
     colidirShed();
+}
+
+function botaoMobile(keys){
+
+    let esquerda = document.getElementById("esquerda");
+    let cima = document.getElementById("cima");
+    let direita = document.getElementById("direita");
+    let baixo = document.getElementById("baixo");
+
+    let xInicial = 0;
+    let yInicial = 0;
+
+    esquerda.addEventListener('touchstart', (e) => {
+        e.preventDefault(); 
+        pegarDelta();
+        xInicial = e.touches[0].clientX;
+        yInicial = e.touches[0].clientY;
+        keys[65] = true;
+    }, { passive: false });
+
+    esquerda.addEventListener('touchend', (e) => {
+        e.preventDefault(); 
+        keys[65] = false;
+    });
+
+    cima.addEventListener('touchstart', (e) => {
+        e.preventDefault(); 
+        pegarDelta();
+        xInicial = e.touches[0].clientX;
+        yInicial = e.touches[0].clientY;
+        keys[87] = true;
+
+    }, { passive: false });
+    cima.addEventListener('touchend', (e) => {
+        e.preventDefault(); 
+        keys[87] = false;
+    });
+
+    direita.addEventListener('touchstart', (e) => {
+        e.preventDefault(); 
+        pegarDelta();
+        xInicial = e.touches[0].clientX;
+        yInicial = e.touches[0].clientY;
+        keys[68] = true;
+    }, { passive: false });
+
+    direita.addEventListener('touchend', (e) => {
+        e.preventDefault(); 
+        keys[68] = false;
+    });
+
+    baixo.addEventListener('touchstart', (e) => {
+        e.preventDefault(); 
+        pegarDelta();
+        xInicial = e.touches[0].clientX;
+        yInicial = e.touches[0].clientY;
+        keys[83] = true;
+    }, { passive: false });
+
+    baixo.addEventListener('touchend', (e) => {
+        e.preventDefault(); 
+        keys[83] = false;
+    });
+
+    function pegarDelta(){
+        document.body.addEventListener('touchmove', (e) =>{
+            e.preventDefault();
+        
+            const xFinal = e.changedTouches[0].clientX;
+            const yFinal = e.changedTouches[0].clientY;
+        
+            const deltaX = xFinal - xInicial;
+            const deltaY = yFinal - yInicial;
+        
+            if (deltaX > 0){
+                keys[68] = true;
+                keys[65] = false;
+            } else if (deltaX < 0){
+                keys[68] = false;
+                keys[65] = true;
+            }
+            if (deltaY > 0){
+                keys[87] = false;
+                keys[83] = true;
+            }else if (deltaY < 0){
+                keys[87] = true;
+                keys[83] = false;
+            }
+        }, { passive: false });
+        return keys;
+    }
 }
 //fim da q10 minigame
 
@@ -505,6 +567,7 @@ window.atacar = function(move, pokemonEsquerda, esquerdaVida, pokemonDireita, da
 
             if (vidaDireita.value <= 0){
                 option(numQuestao, 9);
+                zerouJogo();
             }else if (numQuestao === 20){
                 audioObliterar.play();
                 document.getElementById('indestrutivel').pause();
@@ -586,10 +649,11 @@ window.atacar = function(move, pokemonEsquerda, esquerdaVida, pokemonDireita, da
             }
             if (vidaDireita.value <= 0){
                 option(numQuestao, 9);
+                zerouJogo();
             }
             }, 1500);
         }
-    }
+}
 //q19 ajude pikachu  a matar onix
 
 function pikachuVsOnix(){
@@ -749,4 +813,20 @@ function vsRayquaza(){
     ataque4.classList.add("ataques");
     ataque4.onclick = () => atacar(statusPokemon.move4, pokemonEsquerda, esquerdaVida, shinyRayquaza, 504, 361, shinyRayquazaVida, null, 20);
     ataquesDiv.appendChild(ataque4);
+}
+function zerouJogo(){
+    pontuacao = (acertos / (erros + 1)) * 5;
+
+    let zerouDiv = document.getElementById('zerou');
+    let zerouGanhou = document.getElementById('zerouGanhou');
+    let zerouPerdeu = document.getElementById('zerouPerdeu');
+    let pontuacaoSpan = document.getElementById('pontuacao');
+
+    zerouDiv.style.display = "block";
+    pontuacaoSpan.textContent += pontuacao + "%";
+    if (pontuacao > 80){
+        zerouGanhou.style.display = "block";
+    }else{
+        zerouPerdeu.style.display = "block";
+    }
 }

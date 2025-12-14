@@ -17,7 +17,7 @@
               <h1 class="titulo">PokeQuiz</h1>
         <!--<img src="img/lgl.webp" alt="capa" class="capa">-->
         
-        <div class="question  questionVisivel" id="q1">
+        <div class="question questionVisivel" id="q1">
         <h2>Qual o pokemon mais rápido do jogo?</h2>
 
         <a onclick="option(1, 9); pokemonInicial('regieleki')" ><img src="img/regieleki.webp"></a>
@@ -105,7 +105,7 @@
         <img class="allGen5" src="img/allGen5.png" alt="allGen5">
         </div>
 
-        <div class="question " id="q9">
+        <div class="question" id="q9">
         <h2>Qual o inicial tipo fogo de  Hoen?</h2>
 
         <button class="numQuestion" >9</button>
@@ -117,7 +117,7 @@
 
         </div>
 
-        <div class="question" id="q10">
+        <div class="question " id="q10">
         <h2>SOBREVIVA!!!</h2>
 
         <button class="numQuestion" >10</button>
@@ -136,10 +136,10 @@
         </div>
 
         <div class="movMobile">
-            <button id="esquerda" onclick="botaoMobile('esquerda')">⭠</button>
-            <button id="cima" onclick="botaoMobile('cima')">⭡</button>
-            <button id="direita" onclick="botaoMobile('direita')">⭢</button>
-            <button id="baixo" onclick="botaoMobile('baixo')">⭣</button>
+            <button id="esquerda" >⭠</button>
+            <button id="cima" >⭡</button>
+            <button id="direita">⭢</button>
+            <button id="baixo" >⭣</button>
         </div>
 
         </div>
@@ -282,6 +282,24 @@
             <source src="audio/obliterar.mp3" type="audio/mpeg">
         </audio>
 
+         <div class="question" id="zerou">
+        <h2>PARABÉNS!!!</h2>
+
+        <span id="zerouGanhou">
+            Você realmente é um mestre pokemon...
+        </span><br>
+
+        <span id="zerouPerdeu">
+            Meus parabéns por ter derrotado o shiny mega Rayquaza level 100 com 6 ivs perfeitos,
+            mas alguém como você nunca será um mestre pokemon...
+        </span><br>
+
+        <span id="pontuacao">Pontuação: </span><br>
+        <span id="thankYou">
+            Obrigado por jogar.
+        </span>
+
+        </div>
     </div>
 
     <script src="scripts/index.js"></script>

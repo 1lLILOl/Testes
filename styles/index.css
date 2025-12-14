@@ -29,7 +29,8 @@
 
 /*BASES DO ARQUIVO */
 body{
-    background: url("../img/pokeBG.jpg");
+    background: url("../img/wallpaperQuizes.jpeg") repeat-y ;
+    background-size: cover;
 }
 .sobrefundo{
     width: 90dvw;
@@ -75,9 +76,10 @@ body{
     border: solid 2px #111111a2;
     padding: 10px;
     margin: 15px auto;
+    width: 400px;
 
     img{
-        width: 200px;
+        width: 100%;
         border-radius: 15px;
     }
 }
